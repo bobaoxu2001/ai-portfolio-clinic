@@ -1,0 +1,47 @@
+name: 服务咨询
+description: 咨询作品集体检或简历精修；请勿提交个人隐私材料
+title: "[咨询] "
+labels: ["inquiry"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢咨询。这里是公开页面，请不要上传简历、电话、邮箱、住址、证件或其他个人信息。确认服务范围后，再商定私密的材料传递方式。
+  - type: dropdown
+    id: service
+    attributes:
+      label: 想咨询的服务
+      options:
+        - 作品集快速体检（69 元）
+        - 简历 × 目标 JD 精修（129 元）
+        - 还不确定
+    validations:
+      required: true
+  - type: input
+    id: direction
+    attributes:
+      label: 求职方向
+      description: 只写方向，例如“数据分析应届”或“AI 产品转行”。
+      placeholder: AI 产品 / 数据分析 / 数据科学 / 其他
+    validations:
+      required: true
+  - type: input
+    id: public_project
+    attributes:
+      label: 公开项目链接（可选）
+      description: 只填写本来就公开的 GitHub 或作品集链接，不要粘贴私人文档。
+  - type: textarea
+    id: blocker
+    attributes:
+      label: 目前最卡的地方
+      description: 请勿在这里粘贴简历正文或个人信息。
+      placeholder: 例如：项目很多但 README 不知道怎么组织；投递后很少收到面试。
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我确认没有在此公开 Issue 中提交个人隐私材料。
+          required: true
